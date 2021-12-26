@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: server
+        server-discovery: "true"
     spec:
       containers:
       - name: server

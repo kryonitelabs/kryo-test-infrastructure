@@ -7,6 +7,7 @@ USER citybuild:citybuild
 
 COPY --chown=citybuild:citybuild eula.txt /data/
 COPY --chown=citybuild:citybuild paper.yml /data/
+COPY --chown=citybuild:citybuild server.properties /data/
 COPY --chown=citybuild:citybuild ./data/ /data/
 
 CMD ["java", "-XX:MaxRAMPercentage=75.0", "-jar", "paper.jar"]
