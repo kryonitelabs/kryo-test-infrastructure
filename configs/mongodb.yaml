@@ -1,0 +1,30 @@
+architecture: replicaset
+replicaCount: 1
+auth:
+  rootPassword: test
+
+extraDeploy:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: mongodb-primary
+    namespace: default
+    labels:
+      app.kubernetes.io/component: mongodb
+      app.kubernetes.io/instance: mongodb
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: mongodb
+  spec:
+    type: NodePort
+    externalTrafficPolicy: Cluster
+    ports:
+      - name: mongodb
+        port: 30001
+        nodePort: 30001
+        protocol: TCP
+        targetPort: mongodb
+    selector:
+      app.kubernetes.io/component: mongodb
+      app.kubernetes.io/instance: mongodb
+      app.kubernetes.io/name: mongodb
+      statefulset.kubernetes.io/pod-name: mongodb-0
