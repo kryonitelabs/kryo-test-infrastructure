@@ -27,3 +27,4 @@ Just add a directory watcher to this directory and [Lens](https://k8slens.dev/) 
 | Service       | Port  |
 |---------------|-------|
 | mongodb       | 30001 |
+| proxy         | 25565 |
