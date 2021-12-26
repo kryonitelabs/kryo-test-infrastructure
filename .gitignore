@@ -1,3 +1,7 @@
 # IntelliJ project files
 .idea
 *.iml
+
+# Ignore generated server files
+citybuild/proxy/data
+citybuild/server/data

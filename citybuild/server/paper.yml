@@ -1,0 +1,106 @@
+# This is the main configuration file for Paper.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+# 
+# If you need help with the configuration or have any questions related to Paper,
+# join us in our Discord or IRC channel.
+# 
+# Discord: https://discord.gg/papermc
+# IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
+# Website: https://papermc.io/ 
+# Docs: https://paper.readthedocs.org/ 
+
+verbose: false
+timings:
+  enabled: true
+  verbose: true
+  url: https://timings.aikar.co/
+  server-name-privacy: false
+  hidden-config-entries:
+  - database
+  - settings.bungeecord-addresses
+  - settings.velocity-support.secret
+  history-interval: 300
+  history-length: 3600
+  server-name: Unknown Server
+messages:
+  kick:
+    flying-player: Flying is not enabled on this server
+    flying-vehicle: Flying is not enabled on this server
+    authentication-servers-down: ''
+    connection-throttle: Connection throttled! Please wait before reconnecting.
+  no-permission: '&cI''m sorry, but you do not have permission to perform this command.
+    Please contact the server administrators if you believe that this is in error.'
+config-version: 24
+settings:
+  fix-target-selector-tag-completion: true
+  lag-compensate-block-breaking: true
+  send-full-pos-for-hard-colliding-entities: true
+  log-player-ip-addresses: true
+  console:
+    enable-brigadier-highlighting: true
+    enable-brigadier-completions: true
+  suggest-player-names-when-null-tab-completions: true
+  max-joins-per-tick: 3
+  track-plugin-scoreboards: false
+  fix-entity-position-desync: true
+  use-display-name-in-quit-message: false
+  load-permissions-yml-before-plugins: true
+  region-file-cache-size: 256
+  enable-player-collisions: true
+  save-empty-scoreboard-teams: false
+  bungee-online-mode: true
+  incoming-packet-spam-threshold: 300
+  use-alternative-luck-formula: false
+  velocity-support:
+    enabled: true
+    online-mode: true
+    secret: 'cvZAufhMcVuJ61Wmkb3jPMAt6'
+  console-has-all-permissions: false
+  player-auto-save-rate: -1
+  max-player-auto-save-per-tick: -1
+  watchdog:
+    early-warning-every: 5000
+    early-warning-delay: 10000
+  spam-limiter:
+    tab-spam-increment: 1
+    tab-spam-limit: 500
+    recipe-spam-increment: 1
+    recipe-spam-limit: 20
+  book-size:
+    page-max: 2560
+    total-multiplier: 0.98
+  loggers:
+    deobfuscate-stacktraces: true
+  item-validation:
+    display-name: 8192
+    loc-name: 8192
+    lore-line: 8192
+    book:
+      title: 8192
+      author: 8192
+      page: 16384
+  async-chunks:
+    threads: -1
+  unsupported-settings:
+    allow-permanent-block-break-exploits: false
+    allow-piston-duplication: false
+    allow-headless-pistons: false
+    allow-permanent-block-break-exploits-readme: This setting controls if players
+      should be able to break bedrock, end portals and other intended to be permanent
+      blocks.
+    allow-piston-duplication-readme: This setting controls if player should be able
+      to use TNT duplication, but this also allows duplicating carpet, rails and potentially
+      other items
+    allow-headless-pistons-readme: This setting controls if players should be able
+      to create headless pistons.
+  packet-limiter:
+    kick-message: '&cSent too many packets'
+    limits:
+      all:
+        interval: 7.0
+        max-packet-rate: 500.0
+      PacketPlayInAutoRecipe:
+        interval: 4.0
+        max-packet-rate: 5.0
+        action: DROP

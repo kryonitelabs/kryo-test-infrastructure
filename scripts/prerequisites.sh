@@ -32,6 +32,13 @@ if ! command -v helm &>/dev/null; then
   ./temp/get_helm.sh
 fi
 
+# Checking if skaffold is installed
+if ! command -v skaffold &>/dev/null; then
+  echo "skaffold isn't installed yet. Installing it now..."
+  curl -LsS -o ./temp/skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 >/dev/null
+  sudo install ./temp/skaffold /usr/local/bin/
+fi
+
 rm -rf temp
 
 # Checking if Docker is running

@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+  name: local-infrastructure
+build:
+  artifacts:
+  - image: proxy
+    context: citybuild/proxy
+    docker:
+      dockerfile: Dockerfile
+  - image: server
+    context: citybuild/server
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - manifests/proxy/*.yaml
+    - manifests/server/*.yaml
