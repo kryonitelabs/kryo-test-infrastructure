@@ -3,5 +3,5 @@
 *.iml
 
 # Ignore generated server files
-citybuild/proxy/data
-citybuild/server/data
+kryo/proxy/data
+kryo/server/data

@@ -5,11 +5,11 @@ metadata:
 build:
   artifacts:
   - image: proxy
-    context: citybuild/proxy
+    context: kryo/proxy
     docker:
       dockerfile: Dockerfile
   - image: server
-    context: citybuild/server
+    context: kryo/server
     docker:
       dockerfile: Dockerfile
 deploy:

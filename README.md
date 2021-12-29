@@ -1,4 +1,4 @@
-# citybuild-test-infrastructure
+# kryo-test-infrastructure
 
 ## Usage
 
@@ -14,7 +14,7 @@ The stop bash script kills cluster and deletes its state.
 ./stop.sh
 ```
 
-### Start citybuild
+### Start kryo servers
 ```bash
 ./skaffold.sh
 ```
