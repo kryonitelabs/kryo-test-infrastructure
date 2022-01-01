@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+  labels:
+    app: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb:10.7.1
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: password
+        - name: MARIADB_DATABASE
+          value: whitelist
+        ports:
+        - containerPort: 3306
