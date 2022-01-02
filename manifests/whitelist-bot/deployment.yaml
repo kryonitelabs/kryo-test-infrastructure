@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whitelist-bot
+  labels:
+    app: whitelist-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whitelist-bot
+  template:
+    metadata:
+      labels:
+        app: whitelist-bot
+    spec:
+      containers:
+      - name: whitelist-bot
+        image: whitelist-bot
+        env:
+        - name: CONNECTION_STRING
+          value: jdbc:mariadb://mariadb.default.svc.cluster.local:3306/whitelist?user=root&password=password
+        - name: TOKEN
+          value: xxx
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"

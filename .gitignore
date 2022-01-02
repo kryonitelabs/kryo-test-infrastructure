@@ -5,3 +5,4 @@
 # Ignore generated server files
 kryo/proxy/data
 kryo/server/data
+kryo/whitelist-bot/data

@@ -12,8 +12,13 @@ build:
     context: kryo/server
     docker:
       dockerfile: Dockerfile
+  - image: whitelist-bot
+    context: kryo/whitelist-bot
+    docker:
+      dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
     - manifests/proxy/*.yaml
     - manifests/server/*.yaml
+    - manifests/whitelist-bot/*.yaml
